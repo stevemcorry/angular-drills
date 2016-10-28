@@ -1,6 +1,13 @@
-<html>
-	<body>
-		Something
+<html ng-app='myApp'>
+	<body ng-controller='myCtrl'>
+		<input ng-model='nameFilter.name'>
+		<div ng-repeat='employee in employees | filter: nameFilter'>
+			<h3>{{employee.name}}</h3>
+			Email: {{employee.email}}<br>
+			Date Employed: {{employee.dateEmployed}}<br>
+			Phone: {{employee.phone}}
+		</div>
+
 				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
